@@ -1,0 +1,5 @@
+main: net.simplyrin.gettabcommand.GetTabCommand
+version: 1.0.0
+name: GetTabCommand
+author: Rin
+depend: [ProtocolLib]
