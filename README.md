@@ -17,4 +17,4 @@ gettabcommand.bypass: /(TAB) での通知を回避できます。
 gettabcommand.show: /(TAB) で通知されたコマンドを表示します。
  
 # Download
-https://www.dropbox.com/s/podvf95ngmbbnjm/GetTabCommand.jar?dl=1
+https://www.dropbox.com/s/aaj98p5irrbnh5z/GetTabCommand.jar?dl=1
