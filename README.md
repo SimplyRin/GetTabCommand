@@ -1,9 +1,15 @@
 # GetTabCommand
-プレイヤーがサーバー内で /(TAB) をした時にサーバー側に何を入力してTabキーを押したのかを通知します。
+・Spigot での使用
  
-前提で ProtocolLib が必要です。
+　プレイヤーがサーバー内で /(TAB) をした時にサーバー側に何を入力してTabキーを押したのかを通知します。
  
-起動したときに生成される config.yml ファイルで、/(TAB) で表示されるコマンドリストを隠すこともできます。(多分)
+　前提で ProtocolLib が必要です。
+ 
+　起動したときに生成される config.yml ファイルで、/(TAB) で表示されるコマンドリストを隠すこともできます。(多分)
+  
+・BungeeCord での使用
+ 
+　前提プラグインは不要です。
  
 # Permission
 gettabcommand.bypass: /(TAB) での通知を回避できます。
@@ -11,4 +17,4 @@ gettabcommand.bypass: /(TAB) での通知を回避できます。
 gettabcommand.show: /(TAB) で通知されたコマンドを表示します。
  
 # Download
-https://www.dropbox.com/s/f0dj94r1grxaffn/GetTabCommand.jar?dl=1
+https://www.dropbox.com/s/podvf95ngmbbnjm/GetTabCommand.jar?dl=1
