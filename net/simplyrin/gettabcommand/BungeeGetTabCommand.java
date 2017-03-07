@@ -21,15 +21,17 @@ public class BungeeGetTabCommand extends Plugin implements Listener {
 		String message = event.getCursor();
 		ProxiedPlayer player = BungeeCord.getInstance().getPlayer(event.getSender().toString());
 
-		if(player.hasPermission("gettabcommand.bypass")) {
-			return;
-		}
+		if(message.startsWith("/")) {
+			if(player.hasPermission("gettabcommand.bypass")) {
+				return;
+			}
 
-		BungeeCord.getInstance().getConsole().sendMessage(getPrefix() + "§b" + player.getName() + "@" + player.getServer().getInfo().getName() + ": " + message);
+			BungeeCord.getInstance().getConsole().sendMessage(getPrefix() + "§b" + player.getName() + "@" + player.getServer().getInfo().getName() + ": " + message);
 
-		for(ProxiedPlayer p : BungeeCord.getInstance().getPlayers()) {
-			if(p.hasPermission("gettabcommand.show")) {
-				p.sendMessage(getPrefix() + "§b" + player.getName() + "@" + player.getServer().getInfo().getName() + ": " + message);
+			for(ProxiedPlayer p : BungeeCord.getInstance().getPlayers()) {
+				if(p.hasPermission("gettabcommand.show")) {
+					p.sendMessage(getPrefix() + "§b" + player.getName() + "@" + player.getServer().getInfo().getName() + ": " + message);
+				}
 			}
 		}
 	}
