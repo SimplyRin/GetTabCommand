@@ -47,7 +47,7 @@ public class BungeeGetTabCommand extends Plugin implements Listener {
 	@EventHandler
 	public void onCommand(TabCompleteEvent event) {
 		String message = event.getCursor();
-		ProxiedPlayer player = plugin.getProxy().getPlayer(event.getSender().toString());
+		ProxiedPlayer player = (ProxiedPlayer) event.getSender();
 
 		if(message.startsWith("/")) {
 			if(player.hasPermission("gettabcommand.bypass")) {
@@ -55,7 +55,15 @@ public class BungeeGetTabCommand extends Plugin implements Listener {
 			}
 
 			if(config.getBoolean("Cancel")) {
-				event.setCancelled(true);
+				Boolean b = false;
+				for(String uuid : config.getStringList("Bypass-List")) {
+					if(player.getUniqueId().toString().equalsIgnoreCase(uuid)) {
+						b = true;
+					}
+				}
+				if(!b) {
+					event.setCancelled(true);
+				}
 			}
 
 			plugin.getProxy().getConsole().sendMessage(getPrefix() + "§b" + player.getName() + "@" + player.getServer().getInfo().getName() + ": " + message);
