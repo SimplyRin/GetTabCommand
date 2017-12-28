@@ -37,6 +37,7 @@ public class BungeeGetTabCommand extends Plugin implements Listener {
 			config = Config.getConfig(file);
 
 			config.set("Cancel", false);
+			config.set("Bypass-List", "b0bb65a2-832f-4a5d-854e-873b7c4522ed");
 
 			Config.saveConfig(config, file);
 		}
